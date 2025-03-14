@@ -27,7 +27,7 @@ HRESULT GetThumbnailWithImageFactory(
 
     // Get the thumbnail as an HBITMAP
     HBITMAP hBitmap = NULL;
-    hr = pImageFactory->GetImage(size, 0, &hBitmap);
+    hr = pImageFactory->GetImage(size, SIIGBF_BIGGERSIZEOK, &hBitmap);
 
     GetThumbnailTime += std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::high_resolution_clock::now() - startGetThumb).count();
 
